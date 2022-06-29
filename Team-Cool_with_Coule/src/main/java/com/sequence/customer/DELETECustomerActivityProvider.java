@@ -32,8 +32,6 @@ public class DELETECustomerActivityProvider implements RequestHandler<DELETECust
     public DELETECustomerResult handleRequest(DELETECustomerRequest input, Context context) {
         ServiceComponent dagger = DaggerServiceComponent.create();
         try {
-
-
             return dagger.provideDELTECustomerActivity().handleRequest(input, context);
         } catch (CustomerNotFoundException e) {
             ResponseStatus status = new ResponseStatus(400, "Customer not found.");
@@ -44,7 +42,6 @@ public class DELETECustomerActivityProvider implements RequestHandler<DELETECust
         } catch (AmazonDynamoDBException e) {
             ResponseStatus status = new ResponseStatus(500, e.getMessage());
             return new DELETECustomerResult(null, status);
-
         }
     }
 }
