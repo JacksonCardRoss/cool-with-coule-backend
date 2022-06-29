@@ -46,7 +46,7 @@ public class DELETECustomerActivity implements RequestHandler<DELETECustomerRequ
         if (deleteCustomerRequest.getCustomerId() == null) {
             throw new InvalidParameterException();
         }
-        /* TODO: implement if Administrator functionality is added:
+        /* TODONE: implement if Administrator functionality is added:
          if (!deleteCustomerRequest.getCallingUserId().equals(deleteCustomerRequest.getCustomerId())) {
             throw new RuntimeException();
         }
@@ -59,7 +59,7 @@ public class DELETECustomerActivity implements RequestHandler<DELETECustomerRequ
         Customer customer = customerList.get(0);
 
         dao.deleteCustomer(customer);
-        ResponseStatus status = new ResponseStatus(200, "Customer deleted");
+        ResponseStatus status = new ResponseStatus(200, "Customer removed");
         return new DELETECustomerResult(new CustomerModel(customer), status);
     }
 }
