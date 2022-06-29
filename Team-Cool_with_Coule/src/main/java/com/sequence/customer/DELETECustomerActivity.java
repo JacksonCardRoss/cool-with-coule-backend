@@ -59,7 +59,7 @@ public class DELETECustomerActivity implements RequestHandler<DELETECustomerRequ
         Customer customer = customerList.get(0);
 
         dao.deleteCustomer(customer);
-        ResponseStatus status = new ResponseStatus(200, "Customer delted");
+        ResponseStatus status = new ResponseStatus(200, "Customer deleted");
 
         return new DELETECustomerResult(new CustomerModel(customer), status);
     }
